@@ -1,0 +1,37 @@
+import thermo_properties as prop
+import numpy as np
+import VLE_BubblePoint as BP
+import math as mt
+import equations_fug_method as eq
+import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
+
+P = 1 # conversion Psi to bar
+compounds=["pentene","hexene","heptene","octene","nonene","decene","undecene","dodecene","tridecene","tetradecene"]
+Ti_sat = prop.pure_vapour_temperature(compounds, P)
+print("Tsat:", Ti_sat)
+HK =
+LK =
+# ----------------------------------------------------------------------------------------------
+# Feed specifications, xF/ f
+# ----------------------------------------------------------------------------------------------
+compounds_in_F = []
+f_C5 =15
+f_C6 =1580
+f_C7 =8751
+f_C8 =8971
+f_C9 =9437
+f_C10 =5516
+f_C11 =5898
+f_C12 =3410
+f_C13 =2166
+f_C14 =2177
+
+
+# molar feed fluxes , fi
+f = np.array([f_C5, f_C6,f_C7,f_C8, f_C9, f_C10, f_C11, f_C12, f_C13, f_C14])
+# distillate molar fraction xD,i
+zF = f / sum(f)
+# ---------------------------------------------------------------------------
+print("Feed molar fractions, zF:", zF, sum(zF))
+# ---------------------------------------------------------------------------
